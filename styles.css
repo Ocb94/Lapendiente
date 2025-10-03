@@ -1,0 +1,156 @@
+:root {
+  color-scheme: light dark;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: radial-gradient(
+    circle at top left,
+    #1f3b73,
+    #0d1224 55%,
+    #05070f
+  );
+  color: #f5f6fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-shell {
+  width: 100%;
+  padding: 2.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: min(420px, 100%);
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  background: rgba(8, 12, 28, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.description {
+  margin: 0.75rem 0 1.75rem;
+  color: rgba(245, 246, 251, 0.8);
+  line-height: 1.5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(245, 246, 251, 0.95);
+}
+
+.field input {
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.6);
+  color: inherit;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field input:focus {
+  border-color: #5b8cff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(91, 140, 255, 0.25);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .actions {
+    flex-direction: row;
+  }
+}
+
+.btn {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #5b8cff, #3357ff);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(51, 87, 255, 0.35);
+}
+
+.btn.primary:hover,
+.btn.primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(51, 87, 255, 0.45);
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(245, 246, 251, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn.secondary:hover,
+.btn.secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+#mensaje-estado {
+  min-height: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+#mensaje-estado.error {
+  color: #ff6b81;
+}
+
+#mensaje-estado.success {
+  color: #38ef7d;
+}
